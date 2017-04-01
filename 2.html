@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <link rel='stylesheet' type='text/css' href='dustin_preferences.css'/>
     <title>2.html Make Gray example</title>
     <script src="http://www.DukeLearnToProgram.com/course1/common/js/image/SimpleImage.js"></script>
 </head>
@@ -22,6 +23,7 @@
         }
         
         function makeGray() {
+            console.log(image.complete());
             for (var pixel of image.values()) {
                 var avg = (pixel.getRed() + pixel.getGreen() + pixel.getRed()) / 3;
                 pixel.setRed(avg); pixel.setGreen(avg); pixel.setBlue(avg);
