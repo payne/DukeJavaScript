@@ -1,7 +1,6 @@
 <html>
 
 <head>
-    <link rel='stylesheet' type='text/css' href='dustin_preferences.css'/>
     <title>2.html Make Gray example</title>
     <script src="http://www.DukeLearnToProgram.com/course1/common/js/image/SimpleImage.js"></script>
 </head>
@@ -9,7 +8,7 @@
 <body>
     <h1>upload example</h1>
     From https://www.coursera.org/learn/duke-programming-web/lecture/w74TW/upload-and-display-an-image
-    
+
     <canvas id='can' width='400' height='400'></canvas>
     <input type='file' multiple='false' accept='image/*' id='fInput' onchange='upload()'></input>
     <input type='button' value='Make Gray!' onclick='makeGray()'></input>
@@ -18,15 +17,18 @@
             console.log("In upload!");
             var imgCanvas = document.getElementById('can');
             var fileInput = document.getElementById('fInput');
-            /* globals are evil */ image = new SimpleImage(fileInput);
+            /* globals are evil */
+            image = new SimpleImage(fileInput);
             image.drawTo(imgCanvas);
         }
-        
+
         function makeGray() {
             console.log(image.complete());
             for (var pixel of image.values()) {
                 var avg = (pixel.getRed() + pixel.getGreen() + pixel.getRed()) / 3;
-                pixel.setRed(avg); pixel.setGreen(avg); pixel.setBlue(avg);
+                pixel.setRed(avg);
+                pixel.setGreen(avg);
+                pixel.setBlue(avg);
             }
             var imgCanvas = document.getElementById('can');
             image.drawTo(imgCanvas);
