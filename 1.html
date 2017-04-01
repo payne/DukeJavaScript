@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>1.html example</title>
+    <script src="http://www.DukeLearnToProgram.com/course1/common/js/image/SimpleImage.js"></script>
+</head>
+
+<body>
+    <h1>upload example</h1>
+    From https://www.coursera.org/learn/duke-programming-web/lecture/w74TW/upload-and-display-an-image
+    
+    <canvas id='can' width='400' height='400'></canvas>
+    <input type='file' multiple='false' accept='image/*' id='fInput' onchange='upload()'></input>
+
+    <script>
+        function upload() {
+            console.log("In upload!");
+            var imgCanvas = document.getElementById('can');
+            var fileInput = document.getElementById('fInput');
+            var image = new SimpleImage(fileInput);
+            image.drawTo(imgCanvas);
+        }
+    </script>
+
+</body>
+
+</html>
